@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>145501135093-8g70g2svtuk9jeq8008mffcas433qv72.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.145501135093-8g70g2svtuk9jeq8008mffcas433qv72</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBb2ciKaUYIxSR-pOerdw4OdzEBTzf_mDw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>145501135093</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ordering.app1.onesignal</string>
+	<key>PROJECT_ID</key>
+	<string>rn-delivery-1e213</string>
+	<key>STORAGE_BUCKET</key>
+	<string>rn-delivery-1e213.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:145501135093:ios:ba54af3b023a00565ba5bc</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Grant Bluetooth access to enable seamless communication with printers and other compatible devices.</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Our app uses bluetooth to find, connect and transfer data between different devices</string>
+</dict>
+</plist>

@@ -1,0 +1,698 @@
+Key,Value
+1,day
+7,day
+30,day
+NO_BUSINESS_NEAR_LOCATION,No business near of you location
+ALL,All
+NOT_AVAILABLE_PRODUCTS,These products are not available.
+ENABLED_PRODUCT,Enabled product
+DISABLED_PRODUCT,Disabled product
+ENABLED_CATEGORY,Enabled category
+DISABLED_CATEGORY,Disabled category
+LOADING,Loading
+FAVORITE_ADDED,Favorite added
+FAVORITE_REMOVED,Favorite removed
+EITHER_WAY,Either way
+SPOT_CHANGE_SUCCESS_CONTENT,Changes applied correctly
+COUPON_TOTAL_ERROR,The total value of the cart with discount must be positive
+RECAPTCHA_VALIDATION_IS_REQUIRED,The ReCaptcha validation is required.
+GIFT_CARD_SENT,The gift card sent
+ERROR_GPS_BUTTON,Error to get result with gps button
+ERROR_NOT_FOUND_ADDRESS,The Address was not found
+YOU_DO_NOT_HAVE_PERMISSION,Your session have been closed
+SPECIFIC_ORDER_ACCEPTED,Your accepted the order number _NUMBER_
+SPECIFIC_ORDER_REJECTED,Your rejected the order number _NUMBER_
+INTERNAL_ERROR,Internal Error
+NETWORK_ERROR,Network Error
+ERROR_UPDATING_POSITION,Error updating position
+UPDATING_ORDER,Updating order...
+SPECIFIC_ORDER_UPDATED,Your order number _NUMBER_ has updated
+SPECIFIC_ORDER_ORDERED,Order _NUMBER_ has been ordered
+ORDERS_SUCCESSFULLY_REVIEWED,Orders successfully reviewed
+SPECIFIC_LOGISTIC_ORDER_ORDERED,Logisitc order _NUMBER_ has been ordered
+SPECIFIC_LOGISTIC_ORDER_UPDATED,Your logisitc order number _NUMBER_ has updated
+ORDER_REVIEW_SUCCESS_CONTENT,"Thank you, Order review successfully submitted!"
+PRODUCT_UPDATE,Product updated
+BUSINESS_UPDATED,Business updated
+BUSINESS_DELETED,Business deleted
+ORDER_DRIVER_ASSIGNED,Driver assigned to order
+ORDER_DRIVER_REMOVED,Driver removed from the order
+ORDER_COMPANY_ASSIGNED,Company assigned to order
+ORDER_COMPANY_REMOVED,Company removed from the order
+APIKEY_ADDED,API key added
+PENDING,Pending
+IN_PROGRESS,In progress
+IN_QUEUE,In queue
+EXPIRED,Expired
+RESOLVED,Resolved
+COMMENT,Comment
+LOGISTIC_STATUS,logistic status
+ORDER_REJECT_REASON_IS,Order <b>reject reason</b> is _reject_reason_.
+ORDER_REFUNDED,Order refunded
+EXTERNAL_ID,External id
+STATUS,Status
+AGENT,Agent
+GROUP_ORDER,Group Order
+EXPORT_DRIVER_GROUP_ID,Driver Group Id
+BUSINESS,Business
+CUSTOMER,Customer
+DRIVER,Driver
+ADVANCED_LOGISTICS,Advanced logistics
+SLA_TIMER,SLA’s timer
+ETA,ETA
+ORDERS_DELETED,Orders deleted
+CUSTOMER_REVIEW_SUCCESS_CONTENT,"Thank you, Customer review successfully submitted!"
+SETTINGS_UPDATE,Settings updated
+UPDATED,Updated
+USER_DELETED,User deleted
+CONNECTING,Connecting
+OK,Ok
+DISCONNECTED,Disconnected
+CARD_PAYMENTS,Card payments
+ACH_BANK_TRANSFER,ACH Back transfer
+DIGITAL_WALLETS,Digital Wallets
+GIFT_CARDS,Gift Cards
+TOTAL,Total
+ERROR_MULTIPLE_FETCH,Exceeded the maximum number of retries. Reload the page.
+DEFAULT_PLACE_GROUP,Default place group
+FAILED_TO_ADD_PRODUCT,Failed to add product
+FAILED_TO_UPDATE_PRODUCT,Failed to update product
+COUPON_ALREADY_ADDED,You have a coupon already added
+PROFESSIONAL_REVIEW_SUCCESS_CONTENT,"Thank you, Professional review successfully submitted!"
+DRIVER_REVIEW_SUCCESS_CONTENT,"Thank you, Driver review successfully submitted!"
+PRODUCT_REVIEW_SUCCESS_CONTENT,"Thank you, Product review successfully submitted!"
+STRIPE_LOAD_ERROR,Faile to load Stripe properly
+PRODUCT_ADDED_NOTIFICATION,Product _PRODUCT_ added succesfully
+PRODUCT_UPDATED_NOTIFICATION,Product _PRODUCT_ updated succesfully
+UPDATING_CART_INFO,Updating cart information...
+UPDATING_ORDER_OPTIONS,Updating order options...
+ERROR,Error
+FAILED_TO_REFRESH_USER,Failed to refresh user
+MONTH1,January
+MONTH2,February
+MONTH3,March
+MONTH4,April
+MONTH5,May
+MONTH6,June
+MONTH7,July
+MONTH8,August
+MONTH9,September
+MONTH10,October
+MONTH11,November
+MONTH12,December
+MONTHSHORT1,Jan
+MONTHSHORT2,Feb
+MONTHSHORT3,Mar
+MONTHSHORT4,Apr
+MONTHSHORT5,May
+MONTHSHORT6,Jun
+MONTHSHORT7,Jul
+MONTHSHORT8,Aug
+MONTHSHORT9,Sep
+MONTHSHORT10,Oct
+MONTHSHORT11,Nov
+MONTHSHORT12,Dec
+DAY7,Sunday
+DAY1,Monday
+DAY2,Tuesday
+DAY3,Wednesday
+DAY4,Thursday
+DAY5,Friday
+DAY6,Saturday
+DAYSHORT7,Sun
+DAYSHORT1,Mon
+DAYSHORT2,Tue
+DAYSHORT3,Wed
+DAYSHORT4,Thu
+DAYSHORT5,Fri
+DAYSHORT6,Sat
+DAYMIN7,Su
+DAYMIN1,Mo
+DAYMIN2,Tu
+DAYMIN3,We
+DAYMIN4,Th
+DAYMIN5,Fr
+DAYMIN6,Sa
+RELATIVE_TIME_IN,in %s
+RELATIVE_TIME_AGO,%s ago
+RELATIVE_TIME_FEW_SECONDS,a few seconds
+RELATIVE_TIME_MINUTE,a minute
+RELATIVE_TIME_MINUTES,%d minutes
+RELATIVE_TIME_HOUR,an hour
+RELATIVE_TIME_HOURS,%d hours
+RELATIVE_TIME_DAY,a day
+RELATIVE_TIME_DAYS,%d days
+RELATIVE_TIME_MONTH,a month
+RELATIVE_TIME_MONTHS,%d months
+RELATIVE_TIME_YEAR,a year
+RELATIVE_TIME_YEARS,%d years
+PM,PM
+AM,AM
+INVALID_FORMAT,invalid format
+G,G
+M,M
+K,K
+MI,mi
+KM,km
+COMPLETED_BY_ADMIN,Completed by admin
+REJECTED_BY_ADMIN,Rejected by admin
+ORDER_STATUS_IN_BUSINESS,Order status in business
+PREPARATION_COMPLETED,Preparation Completed
+REJECTED_BY_BUSINESS,Rejected by business
+REJECTED_BY_DRIVER,Rejected by Driver
+ACCEPTED_BY_BUSINESS,Accepted by business
+ACCEPTED_BY_DRIVER,Accepted by driver
+PICK_UP_COMPLETED_BY_DRIVER,Pick up completed by driver
+PICK_UP_FAILED_BY_DRIVER,Pick up Failed by driver
+DELIVERY_COMPLETED_BY_DRIVER,Delivery completed by driver
+DELIVERY_FAILED_BY_DRIVER,Delivery Failed by driver
+PREORDER,PreOrder
+ORDER_NOT_READY,Order not ready
+ORDER_PICKEDUP_COMPLETED_BY_CUSTOMER,Order picked up completed by customer
+ORDER_STATUS_CANCELLED_BY_CUSTOMER,Order status cancelled by customer
+ORDER_NOT_PICKEDUP_BY_CUSTOMER,Order not picked up by customer
+ORDER_DRIVER_ALMOST_ARRIVED_BUSINESS,Order driver almost arrived to business
+ORDER_DRIVER_ALMOST_ARRIVED_CUSTOMER,Order driver almost arrived to customer
+ORDER_CUSTOMER_ALMOST_ARRIVED_BUSINESS,Order customer almost arrived to business
+ORDER_CUSTOMER_ARRIVED_BUSINESS,Order customer arrived to business
+ORDER_LOOKING_FOR_DRIVER,Looking for driver
+ORDER_DRIVER_ON_WAY,Driver on way
+ORDER_DRIVER_WAITING_FOR_ORDER,Driver waiting for order
+ORDER_ACCEPTED_BY_DRIVER_COMPANY,Accepted by driver company
+ORDER_DRIVER_ARRIVED_CUSTOMER,Driver arrived to customer
+ORDERS,Orders
+MAP_VIEW,Map view
+MESSAGES,Messages
+PROFILE,Profile
+ERROR_UPDATING_COORDS,Error updating coords
+MOBILE_LOCATION_NOT_ENABLED,Mobile location not enabled
+MOBILE_LOCATION_OFF,Mobile location off
+MOBILE_LOCATION_NOT_ENABLED_DESC,Enable location for tracking your orders
+CANCEL,Cancel
+MOBILE_IOS_SETTINGS,Open Settings
+POSITIVE_ACTION_LOCATION_PERMISSION,"Change to ""Allow all the time"""
+MOBILE_NEW_ORDER,New Order
+NEW_ORDER_INST,NEW_ORDER_INST
+DELIVER_IT,Deliver it
+DELIVER_IT_INST,DELIVER_IT_INST
+FOLLOW_ROUTE,Follow the route
+FOLLOW_ROUTE_INST,FOLLOW_ROUTE_INST
+ADD_MORE_INFO,Add more info
+ADD_MORE_INFO_INST,ADD_MORE_INFO_INST
+COMPLETE_DELIVERY,Complete the delivery
+COMPLETE_DELIVERY_INST,COMPLETE_DELIVERY_INST
+TUTORIAL_NEXT,Next
+TUTORIAL_SKIP,Skip
+TUTORIAL_BACK,Back
+GO_TO_HOMEPAGE,Go to homepage
+GO_TO_BUSINESSLIST,Go to business list
+PAGE_NOT_FOUND,Page not found
+GO_TO_SETTINGS,Go to settings
+ACCEPT,Accept
+NOTE,Note
+HOURS,hours
+MINUTES,Minutes
+REJECT_REASONS_OPTIONS,Reject reasons
+ENABLED_BUSINESS,Enabled business
+DISABLED_BUSINESS,Disabled business
+ERROR_UPDATING_BUSINESS,Error updating business
+CATEGORIES,Categories
+SEARCH,Search
+NO_RESULTS_FOUND,"Sorry, no results found"
+LOADING_MORE_PRODUCTS,Loading more products
+PRODUCTS,Products
+ORDER_STATUS_PENDING,Order status pending
+ORDERS_COMPLETED,Order completed
+ORDER_REJECTED,Order rejected
+ORDER_READY,Order ready
+ORDER_REJECTED_RESTAURANT,Order rejected by restaurant
+ORDER_STATUS_CANCELLEDBYDRIVER,Order status cancelled by driver
+ORDER_STATUS_ACCEPTEDBYRESTAURANT,Order status accepted by restaurant
+ORDER_CONFIRMED_ACCEPTED_BY_DRIVER,Order confirmed accepted by driver
+ORDER_PICKUP_COMPLETED_BY_DRIVER,Order pickup completed by driver
+ORDER_PICKUP_FAILED_BY_DRIVER,Order pickup failed by driver
+ORDER_DELIVERY_COMPLETED_BY_DRIVER,Order delivery completed by driver
+ORDER_DELIVERY_FAILED_BY_DRIVER,Order delivery failed by driver
+UNKNOWN,Unknown
+STORE_MESSAGE_1,store_message_1
+STORE_MESSAGE_2,store_message_2
+STORE_MESSAGE_3,store_message_3
+STORE_MESSAGE_4,store_message_4
+DRIVER_MESSAGE_1,driver_message_1
+DRIVER_MESSAGE_2,driver_message_2
+DRIVER_MESSAGE_3,driver_message_3
+DRIVER_MESSAGE_4,driver_message_4
+ADMIN_MESSAGE_1,admin_message_1
+ADMIN_MESSAGE_2,admin_message_2
+ADMIN_MESSAGE_3,admin_message_3
+ADMIN_MESSAGE_4,admin_message_4
+IMAGE_NOT_FOUND,Image not found
+ORDER,Order
+CHANGED_FROM,Changed from
+TO,To
+WAS_ASSIGNED_AS_DRIVER,Was assigned as driver
+DRIVER_UNASSIGNED,Driver unassigned
+ORDER_PLACED_FOR,Order placed for
+VIA,Via
+OTHER,Other
+SENT_TO,Sent to
+ADMINISTRATOR,Administrator
+CITY_MANAGER,City manager
+BUSINESS_OWNER,Business owner
+DRIVER_MANAGER,Driver manager
+WRITE_MESSAGE,Write message
+LOAD_MORE,Load more
+YOUR_LOCATION,Your Location
+INVOICE_ORDER_NO,Order No.
+IS,is
+MINNUTES,mins
+SHOW_IN_OTHER_MAPS,Show in other maps
+WHAT_APP_WOULD_YOU_USE,What app would you like to use?
+REJECT,Reject
+SUNDAY_ABBREVIATION,Sun
+MONDAY_ABBREVIATION,Mon
+TUESDAY_ABBREVIATION,Tues
+WEDNESDAY_ABBREVIATION,Wed
+THURSDAY_ABBREVIATION,Thur
+FRIDAY_ABBREVIATION,Fri
+SATURDAY_ABBREVIATION,Sat
+SCHEDULE,Schedule
+NOT_AVAILABLE,Not available
+FORGOT_YOUR_PASSWORD,Forgot your password?
+EMAIL,Email
+LINK_SEND_FORGOT_PASSWORD,Link Sent
+FRONT_RECOVER_PASSWORD,Recover Password
+GO_TO_THIS_LOCATION,Go to this location
+TITLE_SIGN_UP,Welcome
+PROJECT_NAME,Project Name
+SET_PROJECT,Set project
+LOGIN,Login
+INVALID_PHONE_NUMBER,Invalid phone number
+TRY_AGAIN,Please try again
+BY_EMAIL,by Email
+BY_PHONE,by Phone
+BY_OTP_EMAIL,By Otp Email
+BY_OTP_PHONE,By Otp Phone
+PASSWORD,Password
+VERIFY_ReCAPTCHA,Verify reCAPTCHA
+GET_VERIFY_CODE,Get Verify Code
+OR,Or
+ENTER_VERIFICATION_CODE,Enter verification code
+CODE_SENT,The code has been sent
+TIME_IS_UP,Time is up
+PLEASE_RESEND_CODE,Please resend code again
+RESEND_CODE,Resend code
+LOGOUT,logout
+ORDER_NUMBERS,Order Numbers
+ORDER_NUMBER,Order number
+SHOW_ORDERS,Show orders
+MORE_INFO,More info
+CONTACTS,Contacts
+NEWEST,Newest
+BUSINESSES,Businesses
+CUSTOMERS,Customers
+DRIVERS,Drivers
+MOBILE_NO_INTERNET,No internet connection
+NETWORK_OFFLINE_MESSAGE,Your connection appears to be off-line. Try to refresh the page
+REFRESH,Refresh
+NEW_MESSAGES_RECEIVED,New messages have been received!
+ORDER_N_UNREAD_MESSAGES,Order #_order_id_ has unread messages.
+NEW_ORDERS_RECEIVED,New orders have been received!
+ORDER_N_ORDERED,Order #_order_id_ has been ordered.
+NEW_ORDERS_UPDATED,New orders have been updated!
+ORDER_N_UPDATED,Order #_order_id_ has been updated.
+ENABLE_NOTIFICATIONS,Enable notifications
+ACTIVE_NOTIFICATION_TO_RECEIVE_INFORMATION,Activate notifications to receive information about your orders
+DELIVERY,Delivery
+PICKUP,Pickup
+EAT_IN,Eat in
+CURBSIDE,Curbside
+DRIVER_THRU,Driver thru
+CATERING_DELIVERY,Catering delivery
+CATERING_PICKUP,Catering pickup
+SUBTOTAL,Subtotal
+DRIVER_TIP,Driver tip
+DELIVERY_FEE,Delivery Fee
+COPY_TO_CLIPBOARD,Copy to clipboard.
+DRIVER_NOT_ALLOWED_TO_REJECT_ORDER,The driver is not allowed to reject an order.
+ARRIVED_TO_BUSINESS,Arrived to bussiness
+ARRIVED_TO_CUSTOMER,Arrived to customer
+PENDING_SYNC_CHANGES,Pending sync changes
+PICKUP_FAILED,Pickup failed
+PICKUP_COMPLETE,Pickup complete
+DELIVERY_FAILED,Delivery Failed
+DELIVERY_COMPLETE,Delivery complete
+GO_TO_MY_ORDERS,Go to my orders
+WARNING,Warning
+PAY_WITH_CASH_WALLET,Pay with Cash Wallet
+PAY_WITH_CREDITS_POINTS_WALLET,Pay with Credit Points Wallet
+CUSTOM_FIELDS,Custom fields
+BUSINESS_DETAILS,Business details
+DISTANCE_TO_THE_BUSINESS,Distance to the business
+SHOW_LESS,Show less
+READ_MORE,Read more
+CUSTOMER_DETAILS,Customer details
+ON_BEHALF_OF,On behalf of
+REVIEW_CUSTOMER,Review customer
+ORDER_DETAILS,Order Details
+ORDER_COMMENT,Order Comment
+SUBTOTAL_WITH_DISCOUNT,Subtotal with discount
+TAX,Tax
+SERVICE_FEE,Service Fee
+INHERIT_FROM_BUSINESS,Inherit from business
+PAYMENTS,Payments
+SPOT_NUMBER,Spot number
+VEHICLE,Vehicle
+CAR_REGISTRATION,Car registration
+COLOR,Color
+MODEL,Model
+TYPE,Type
+CASH_WALLET,Cash Wallet
+CREDITS_POINTS_WALLET,Credit Points Wallet
+CASH_CHANGE_OF,Change of :amount:
+ASAP_ABBREVIATION,ASAP
+CREATED_AT,Created at
+PLACED_TO,Placed to
+ORDER_TYPE,Order Type
+DELIVERY_PREFERENCE,Delivery Preference
+EATIN_SPOT_NUMBER,Table number
+DRIVE_THRU_SPOT_NUMBER,Drive thru lane
+CURBSIDE_SPOT_NUMBER,Spot number
+PICK_UP,Pick up
+POINTS_WALLET,Points Wallet
+INGREDIENTS,Ingredients
+NO,No
+ORDER_NO,Order No.
+DELIVERY_DATE,Delivery Date
+FULL_NAME,Full Name
+MOBILE_PHONE,Mobile Phone
+FULL_ADDRESS,Full Addres
+INTERNAL_NUMBER,Internal Number
+ZIPCODE,Zipcode
+BUSINESS_PHONE,Business Phone
+ADDRESS,Address
+SPECIAL_ADDRESS,Special Address
+DISCOUNT,Discount
+MY_ORDERS,My orders
+SLA_SETTING,SLA’s Settings
+All,All
+LOAD_MORE_ORDERS,Load more orders
+SEARCH_ORDERS,Search orders
+SLA_SETTINGS,SLA’s Settings
+COMPLETED,Completed
+REJECTED,Rejected
+DRIVER_IN_BUSINESS,Driver in business
+READY_FOR_PICKUP,Ready for pickup
+CANCELLED_BY_CUSTOMER,Cancelled by customer
+CANCELLED,Cancelled
+AT_RISK,At Risk
+DELAYED,Delayed
+DRIVE_THRU,Drive thru
+DELIVERY_OK_STATUS_DESC,Get delivery time from the businesses.
+DELIVERY_ATRISK_STATUS_DESC,Is the time between delivery time of busines and the delayed time.
+DELIVERY_DELAYED_STATUS_DESC,"If this time is exceeded, the order will be delayed."
+TIME_MIN,min
+LAST_UPDATE,Last update
+NUMBER_CHANGES_PENDING_SYNC,_value_ changes pending sync
+CLEAR_SEARCh,Clear search
+ACTIVE,Active
+SELECT_BUSINESS,Select Business
+SELECT_CITY,Select City
+TODAY,Today
+YESTERDAY,Yesterday
+LAST_7_DAYS,Last 7 days
+LAST_30_DAYS,Last 30 days
+SELECT_DATE,Select Date
+SELECT_DELIVERY_TYPE,Select Delivery type
+SELECT_DRIVER,Select Driver
+SELECT_PAYMETHOD,Select Paymethod
+SELECT_STATUS,Select Status
+NOTES,Notes
+PRINT,Print
+PHONE_NUMBER,Phone number
+REJECT_ALL,Reject all
+ACCEPT_ALL,Accept all
+TRACK_REAL_TIME_POSITION,Track real time position
+PICKUP_COMPLETED_BY_CUSTOMER,Pickup completed by customer
+DAY,day
+INVOICE_GROUP_NO,Group No.
+NO_EXTERNAL_ID,No external Id 
+VIEW_ORDER,View order
+GROUP_NRO,Group No.
+REMOVE,Remove
+DELETE_PRODUCT,Delete Product
+TERRIBLE,Terrible
+BAD,Bad
+OKAY,Okay
+GOOD,Good
+GREAT,Great
+HOW_WAS_YOUR_CUSTOMER,How was your experience with _name_?
+HOW_WAS_YOUR_NO_CUSTOMER,How was your experience?
+REVIEW_COMMENT_QUESTION,Do you want to add something?
+SEND_REVIEW,Send Review
+SUNDAY,Sunday
+MONDAY,Monday
+TUESDAY,Tuesday
+WEDNESDAY,Wednesday
+THURSDAY,Thurday
+FRIDAY,Friday
+SATURDAY,Saturday
+OUTSIDE_ESTABLISHED_SCHEDULE,You are outside the established schedule
+NEXT_TIME,Next time
+GO_BACK,Go back
+WEB_APPNAME,Ordering
+QUESTION_DELETE_SESSION,Are you sure to delete this session?
+QUESTION_ENABLE_ALL_SESSIONS,Are you sure to enable all sessions?
+QUESTION_DELETE_ALL_SESSIONS,Are you sure that you want to delete all sessions?
+QUESTION_DELETE_ALL_SESSIONS_EXCEPT_CURRENT,Are you sure that you want to delete all sessions except current?
+SESSIONS,Sessions
+CURRENT,Current
+DELETE_ALL_SESSIONS,Delete all sessions
+DELETE_ALL_SESSIONS_EXCEPT_CURRENT,Delete all sessions except current
+ACTIVE_SESSIONS,Active sessions
+FROM,From
+ERROR_OPENING_THE_LINK,Error opening the link
+LINK_UNSUPPORTED,Link could not be opened or is not supported
+INVALID_NUMBER,Invalid number
+INVALID_ERROR_EMAIL,Invalid email address
+SIGNUP,Sign Up
+LOADING_MORE_BUSINESSES,Loading more businesses
+STORES,Stores
+MORE_SETTINGS_GO_TO,For more settings go to
+LINK_MORE_SETTINGS_GO_TO,https://app.ordering.co
+MOBILE_CONFIRM_PASSWORD,Confirm Password
+YOUR_PREVIOUS_CELLPHONE,Your previous cellphone
+UPDATING,Updating
+UPDATE,Update
+QUESTION_REMOVE_ACCOUNT,Are you sure that you want to remove your account?
+ACCOUNT_ALERT,Account alert
+AVAILABLE_STATE_IS_UPDATED,Available state is updated
+UPDATE_SUCCESSFULLY,Update successfully
+REFRESH_PROFILE,Refresh profile
+PHONE,Phone
+NOT_PHONE,Not Phone
+EDIT,Edit
+PRINTER_SETTINGS,Printer Settings
+REMOVE_ACCOUNT,Remove account
+VERIFY_PHONE,Verify Phone
+ARE_YOU_NOT_SEEING_THE_CODE,Are you not seeing the code?
+SEND_AGAIN,Send Again
+CONNECTION_STATUS_SHORT,Status
+CONNECTION_STATUS,Connection status
+WEBSOCKET_OK,The websocket works normally.
+WEBSOCKET_CONNECTING,The websocket is connecting.
+WEBSOCKET_DISCONNECTED,"The server is slow, please reload."
+CLOSE,Close
+THE_DRIVER_IS_CLOSE,The driver is close
+ORDER_ATTRIBUTE_CHANGED_FROM_TO,Order _attribute_ changed from _from_ to _to_.
+ESTIMATED_DELIVERY_TIME,Estimated delivery time is _min_ min(s).
+ESTIMATED_PREPARATION_TIME,The estimated preparation time is _min_ min(s).
+DRIVER_ASSIGNED_AS_DRIVER,_driver_ was assigned as driver.
+ORDER_ATTRIBUTE_CHANGED_TO,Order _attribute_ changed to _to_.
+APP_ID,APP_ID
+AUTHOR,Author
+GUEST_USER,Guest user
+USER_AGENT,User Agent
+LOCATION,Location
+IP,IP
+VALIDATION_ERROR_AFTER,The _attribute_ must be a date after _date_.
+VALIDATION_ERROR_AFTER_OR_EQUAL,The _attribute_ must be a date after or equal to _date_.
+VALIDATION_ERROR_ALPHA,The _attribute_ may only contain letters.
+VALIDATION_ERROR_ALPHA_DASH,"The _attribute_ may only contain letters, numbers, and dashes."
+VALIDATION_ERROR_ALPHA_NUM,The _attribute_ may only contain letters and numbers.
+VALIDATION_ERROR_ARRAY,The _attribute_ must be an array.
+VALIDATION_ERROR_BEFORE,The _attribute_ must be a date before _date_.
+VALIDATION_ERROR_BEFORE_OR_EQUAL,The _attribute_ must be a date before or equal to _date_.
+VALIDATION_ERROR_BETWEEN_NUMERIC,The _attribute_ must be between _min_ and _max_.
+VALIDATION_ERROR_BETWEEN_FILE,The _attribute_ must be between _min_ and _max_ kilobytes.
+VALIDATION_ERROR_BETWEEN_STRING,The _attribute_ must be between _min_ and _max_ characters.
+VALIDATION_ERROR_BETWEEN_ARRAY,The _attribute_ must have between _min_ and _max_ items.
+VALIDATION_ERROR_BOOLEAN,The _attribute_ field must be true or false.
+VALIDATION_ERROR_CONFIRMED,The _attribute_ confirmation does not match.
+VALIDATION_ERROR_DATE,The _attribute_ is not a valid date.
+VALIDATION_ERROR_DATE_FORMAT,The _attribute_ does not match the format _format_.
+VALIDATION_ERROR_DIFFERENT,The _attribute_ and _other_ must be different.
+VALIDATION_ERROR_DIGITS,The _attribute_ must be _digits_ digits.
+VALIDATION_ERROR_DIGITS_BETWEEN,The _attribute_ must be between _min_ and _max_ digits.
+VALIDATION_ERROR_DIMENSIONS,The _attribute_ has invalid image dimensions.
+VALIDATION_ERROR_DISTINCT,The _attribute_ field has a duplicate value.
+VALIDATION_ERROR_EMAIL,The _attribute_ must be a valid email address.
+VALIDATION_ERROR_EXISTS,The selected _attribute_ is invalid.
+VALIDATION_ERROR_FILE,The _attribute_ must be a file.
+VALIDATION_ERROR_FILLED,The _attribute_ field is required.
+VALIDATION_ERROR_IMAGE,The _attribute_ must be an image.
+VALIDATION_ERROR_IN,The selected _attribute_ is invalid.
+VALIDATION_ERROR_IN_ARRAY,The _attribute_ field does not exist in _other_.
+VALIDATION_ERROR_IP,The _attribute_ must be a valid IP address.
+VALIDATION_ERROR_JSON,The _attribute_ must be a valid JSON string.
+VALIDATION_ERROR_MAX_NUMERIC,The _attribute_ may not be greater than _max_.
+VALIDATION_ERROR_MAX_FILE,The _attribute_ may not be greater than _max_ kilobytes.
+VALIDATION_ERROR_MAX_STRING,The _attribute_ may not be greater than _max_ characters.
+VALIDATION_ERROR_MAX_ARRAY,The _attribute_ may not have more than _max_ items.
+VALIDATION_ERROR_MIMES,The _attribute_ must be a file of type_ _values_.
+VALIDATION_ERROR_MIMETYPES,The _attribute_ must be a file of type_ _values_.
+VALIDATION_ERROR_MIN_NUMERIC,The _attribute_ must be at least _min_.
+VALIDATION_ERROR_MIN_FILE,The _attribute_ must be at least _min_ kilobytes.
+VALIDATION_ERROR_MIN_STRING,The _attribute_ must be at least _min_ characters.
+VALIDATION_ERROR_MIN_ARRAY,The _attribute_ must have at least _min_ items.
+VALIDATION_ERROR_NOT_IN,The selected _attribute_ is invalid.
+VALIDATION_ERROR_NUMERIC,The _attribute_ must be a number.
+VALIDATION_ERROR_PRESENT,The _attribute_ field must be present.
+VALIDATION_ERROR_REGEX,The _attribute_ format is invalid.
+VALIDATION_ERROR_REQUIRED_IF,The _attribute_ field is required when _other_ is _value_.
+VALIDATION_ERROR_REQUIRED_UNLESS,The _attribute_ field is required unless _other_ is in _values_.
+VALIDATION_ERROR_REQUIRED_WITH,The _attribute_ field is required when _values_ is present.
+VALIDATION_ERROR_REQUIRED_WITH_ALL,The _attribute_ field is required when _values_ is present.
+VALIDATION_ERROR_REQUIRED_WITHOUT,The _attribute_ field is required when _values_ is not present.
+VALIDATION_ERROR_REQUIRED_WITHOUT_ALL,The _attribute_ field is required when none of _values_ are present.
+VALIDATION_ERROR_SAME,The _attribute_ and _other_ must match.
+VALIDATION_ERROR_SIZE_NUMERIC,The _attribute_ must be _size_.
+VALIDATION_ERROR_SIZE_FILE,The _attribute_ must be _size_ kilobytes.
+VALIDATION_ERROR_SIZE_STRING,The _attribute_ must be _size_ characters.
+VALIDATION_ERROR_SIZE_ARRAY,The _attribute_ must contain _size_ items.
+VALIDATION_ERROR_STRING,The _attribute_ must be a string.
+VALIDATION_ERROR_TIMEZONE,The _attribute_ must be a valid zone.
+VALIDATION_ERROR_UNIQUE,The _attribute_ has already been taken.
+VALIDATION_ERROR_UPLOADED,The _attribute_ failed to upload.
+VALIDATION_ERROR_URL,The _attribute_ format is invalid.
+VALIDATION_ERROR_IMAGES_SRC,"The image _attribute_ must be a file with valid format (png, jpg), a url o"
+VALIDATION_ERROR_SCHEDULE,The schedule is invalid.
+VALIDATION_ERROR_PRODUCTS,The list of products is invalid.
+VALIDATION_ERROR_ADDRESS_REQUIRED,The field Address is required
+VALIDATION_ERROR_ADDRESS_NOTES_REQUIRED,The field Address notes is required
+VALIDATION_ERROR_CITY_DROPDOWN_OPTION_REQUIRED,The field City dropdown option is required
+VALIDATION_ERROR_COUPON_REQUIRED,The field Coupon is required
+VALIDATION_ERROR_DRIVER_TIP_REQUIRED,The field Driver tip is required
+REJECT_REASON_STORE_RECIEVE_ORDER_LATE,Store Receive Order Late
+REJECT_REASON_STORE_BUSY,Store Busy
+REJECT_REASON_OTHER,Other
+REJECT_REASON_VERY_FAR_AWAY,Very Far Away
+REJECT_REASON_DRIVER_VEHICLE_INCIDENT,Driver Vehicle Incident
+REJECT_REASON_DESTINATION_UNREACHEABLE,Destination Unreachable
+REJECT_REASON_STORE_CLOSED,Store Closed
+REJECT_REASON_UNAVAILABLE_DRIVER,Unavailable Driver
+REJECT_REASON_FORGOT_COMPLETE_LOCATION,Forgot Complete Location
+REJECT_REASON_NOT_INTERNET_CONECTION,No Internet Connection
+REJECT_REASON_RECIPIENT_UNAVAILABLE,Recipient Unavailable
+REJECT_REASON_INCORRECT_MISSING_ITEMS,Incorrect Missing Items
+REJECT_REASON_REFUSED_DAMAGE,Refused Damage
+QUICK_COMMENT_TITLE_1,What went wrong?
+QUICK_COMMENT_1_0,Not handled with care
+QUICK_COMMENT_1_1,Poor communication
+QUICK_COMMENT_1_2,COVID-19 issue
+QUICK_COMMENT_1_3,Didn’t follow instructions
+QUICK_COMMENT_1_4,Rude
+QUICK_COMMENT_1_5,Not on-time
+QUICK_COMMENT_TITLE_2,What went wrong?
+QUICK_COMMENT_2_0,Not handled with care
+QUICK_COMMENT_2_1,Poor communication
+QUICK_COMMENT_2_2,COVID-19 issue
+QUICK_COMMENT_2_3,Didn’t follow instructions
+QUICK_COMMENT_2_4,Rude
+QUICK_COMMENT_2_5,Not on-time
+QUICK_COMMENT_TITLE_3,What could have been better?
+QUICK_COMMENT_3_0,Not handled with care
+QUICK_COMMENT_3_1,Poor communication
+QUICK_COMMENT_3_2,COVID-19 issue
+QUICK_COMMENT_3_3,Didn’t follow instructions
+QUICK_COMMENT_3_4,Rude
+QUICK_COMMENT_3_5,Not on-time
+QUICK_COMMENT_TITLE_4,Tell us more
+QUICK_COMMENT_4_0,Not handled with care
+QUICK_COMMENT_4_1,Poor communication
+QUICK_COMMENT_4_2,COVID-19 issue
+QUICK_COMMENT_4_3,Didn’t follow instructions
+QUICK_COMMENT_4_4,Rude
+QUICK_COMMENT_4_5,Not on-time
+QUICK_COMMENT_TITLE_5,What went well?
+QUICK_COMMENT_5_0,Good communication
+QUICK_COMMENT_5_1,Followed instructions
+QUICK_COMMENT_5_2,Friendly
+QUICK_COMMENT_5_3,Handled with care
+QUICK_COMMENT_5_4,Above and beyond
+CUSTOMER_QUICK_COMMENT_TITLE_1,What went wrong?
+CUSTOMER_QUICK_COMMENT_1_0,Poor communication
+CUSTOMER_QUICK_COMMENT_1_1,Wrong address
+CUSTOMER_QUICK_COMMENT_1_2,COVID-19 issue
+CUSTOMER_QUICK_COMMENT_1_3,Didn't follow instructions
+CUSTOMER_QUICK_COMMENT_1_4,Rude
+CUSTOMER_QUICK_COMMENT_1_5,Not on-time
+CUSTOMER_QUICK_COMMENT_TITLE_3,What could have been better?
+CUSTOMER_QUICK_COMMENT_3_0,Poor communication
+CUSTOMER_QUICK_COMMENT_3_1,Wrong address
+CUSTOMER_QUICK_COMMENT_3_2,COVID-19 issue
+CUSTOMER_QUICK_COMMENT_3_3,Didn't follow instructions
+CUSTOMER_QUICK_COMMENT_3_4,Rude
+CUSTOMER_QUICK_COMMENT_3_5,Not on-time
+CUSTOMER_QUICK_COMMENT_TITLE_4,Tell us more
+CUSTOMER_QUICK_COMMENT_4_0,Poor communication
+CUSTOMER_QUICK_COMMENT_4_1,Wrong address
+CUSTOMER_QUICK_COMMENT_4_2,COVID-19 issue
+CUSTOMER_QUICK_COMMENT_4_3,Didn't follow instructions
+CUSTOMER_QUICK_COMMENT_4_4,Rude
+CUSTOMER_QUICK_COMMENT_4_5,Not on-time
+CUSTOMER_QUICK_COMMENT_TITLE_5,What went well?
+CUSTOMER_QUICK_COMMENT_5_0,Good communication
+CUSTOMER_QUICK_COMMENT_5_1,Friendly
+CUSTOMER_QUICK_COMMENT_5_2,Above and beyond
+DRIVER_QUICK_COMMENT_TITLE_1,What went wrong?
+DRIVER_QUICK_COMMENT_1_0,Not handled with care
+DRIVER_QUICK_COMMENT_1_1,Poor communication
+DRIVER_QUICK_COMMENT_1_2,COVID-19 issue
+DRIVER_QUICK_COMMENT_1_3,Didn’t follow instructions
+DRIVER_QUICK_COMMENT_1_4,Rude
+DRIVER_QUICK_COMMENT_1_5,Not on-time
+DRIVER_QUICK_COMMENT_TITLE_2,What went wrong?
+DRIVER_QUICK_COMMENT_2_0,Not handled with care
+DRIVER_QUICK_COMMENT_2_1,Poor communication
+DRIVER_QUICK_COMMENT_2_2,COVID-19 issue
+DRIVER_QUICK_COMMENT_2_3,Didn’t follow instructions
+DRIVER_QUICK_COMMENT_2_4,Rude
+DRIVER_QUICK_COMMENT_2_5,Not on-time
+DRIVER_QUICK_COMMENT_TITLE_3,What could have been better?
+DRIVER_QUICK_COMMENT_3_0,Not handled with care
+DRIVER_QUICK_COMMENT_3_1,Poor communication
+DRIVER_QUICK_COMMENT_3_2,COVID-19 issue
+DRIVER_QUICK_COMMENT_3_3,Didn’t follow instructions
+DRIVER_QUICK_COMMENT_3_4,Rude
+DRIVER_QUICK_COMMENT_3_5,Not on-time
+DRIVER_QUICK_COMMENT_TITLE_4,Tell us more
+DRIVER_QUICK_COMMENT_4_0,Not handled with care
+DRIVER_QUICK_COMMENT_4_1,Poor communication
+DRIVER_QUICK_COMMENT_4_2,COVID-19 issue
+DRIVER_QUICK_COMMENT_4_3,Didn’t follow instructions
+DRIVER_QUICK_COMMENT_4_4,Rude
+DRIVER_QUICK_COMMENT_4_5,Not on-time
+DRIVER_QUICK_COMMENT_TITLE_5,What went well?
+DRIVER_QUICK_COMMENT_5_0,Good communication
+DRIVER_QUICK_COMMENT_5_1,Followed instructions
+DRIVER_QUICK_COMMENT_5_2,Friendly
+DRIVER_QUICK_COMMENT_5_3,Handled with care
+DRIVER_QUICK_COMMENT_5_4,Above and beyond
+QUICK_COMMENT_LIKE_1,Good price
+QUICK_COMMENT_LIKE_2,Good portion size
+QUICK_COMMENT_LIKE_3,Packed well
+QUICK_COMMENT_DISLIKE_0,Not tasty
+QUICK_COMMENT_DISLIKE_1,High price
+QUICK_COMMENT_DISLIKE_2,Bad portion size
+QUICK_COMMENT_DISLIKE_3,Bad portion size
