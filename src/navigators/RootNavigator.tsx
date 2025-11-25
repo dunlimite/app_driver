@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import isSameOrAfter from 'dayjs/plugin/isSameOrAfter';
 import OneSignal from 'react-native-onesignal';
-import BackgroundGeolocation, { Subscription } from "react-native-background-geolocation";
+// import BackgroundGeolocation, { Subscription } from "react-native-background-geolocation";
 import { RESULTS, request, requestMultiple } from 'react-native-permissions';
 import NetInfo from '@react-native-community/netinfo';
 import RNConfigReader from 'rn-config-reader';
@@ -488,18 +488,18 @@ const RootNavigator = () => {
       onHttpChange.remove()
     }
   }
-  useEffect(() => {
-    if (languageState?.loading) return
-    handleBackgroundGeolocation()
-  }, [permissionsState.isGranted, token, languageState?.loading])
+  // useEffect(() => {
+  //   if (languageState?.loading) return
+  //   handleBackgroundGeolocation()
+  // }, [permissionsState.isGranted, token, languageState?.loading])
 
-  useEffect(() => {
-    if (!enabled.enabled && enabled.ready && user?.enabled) {
-      BackgroundGeolocation.start();
-    } else if (!enabled.ready || !auth || !user?.enabled) {
-      BackgroundGeolocation.stop();
-    }
-  }, [enabled.ready, auth, user?.enabled, enabled.enabled]);
+  // useEffect(() => {
+  //   if (!enabled.enabled && enabled.ready && user?.enabled) {
+  //     BackgroundGeolocation.start();
+  //   } else if (!enabled.ready || !auth || !user?.enabled) {
+  //     BackgroundGeolocation.stop();
+  //   }
+  // }, [enabled.ready, auth, user?.enabled, enabled.enabled]);
 
   useEffect(() => {
     if (user) {

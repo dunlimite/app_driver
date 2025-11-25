@@ -7451,17 +7451,10 @@ react-native-awesome-loading@^1.0.15:
   resolved "https://registry.yarnpkg.com/react-native-awesome-loading/-/react-native-awesome-loading-1.0.15.tgz#9255ebe0be96af5268f6ad3490e5d866c91b9a2f"
   integrity sha512-PkRtL3k/T2jqhiBsUl1Hls7HoNGpg5NS5Ro7RoBcbcR67KgJI7FxLeY+aOJzNZGTJvGTRznqtIsIG6dlGKXTHw==
 
-react-native-background-fetch@^4.2.1, react-native-background-fetch@~4.2.6:
+react-native-background-fetch@^4.2.1:
   version "4.2.7"
   resolved "https://registry.yarnpkg.com/react-native-background-fetch/-/react-native-background-fetch-4.2.7.tgz#2c13afa2454d0f01da2b798d0968acf4a6b34373"
   integrity sha512-lR8MmQRjd7MV9KBSOsyxFRW7jeCjNOSvsT4PECwZv54iZZtxUkRjH8Kbr6SGiSPK1AmYM6TCdRBEt2I9FDZJEg==
-
-react-native-background-geolocation@^4.14.6:
-  version "4.18.4"
-  resolved "https://registry.yarnpkg.com/react-native-background-geolocation/-/react-native-background-geolocation-4.18.4.tgz#e0eb00d7fe9e38b4289c70c1b0e899cb3dc4da0e"
-  integrity sha512-L8F/y/oXnPCBtJo/+KD0kM/vLfn3O3hQal8SFujQkHCnX+uI8p+MNSeNzHL2UxgvolbUXsFHUdYgVLdc+v9P4A==
-  dependencies:
-    react-native-background-fetch "~4.2.6"
 
 react-native-background-timer@^2.4.1:
   version "2.4.1"

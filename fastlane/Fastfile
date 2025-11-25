@@ -1,0 +1,67 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  desc "Build and upload APK to Firebase App Distribution"
+  lane :build_and_distribute do
+    # Clean and build the project
+    gradle(
+      task: "clean",
+      project_dir: "android"
+    )
+
+    # Build the APK
+    gradle(
+      task: "assembleRelease",
+      project_dir: "android"
+    )
+
+    # Upload to Firebase App Distribution
+    firebase_app_distribution(
+      app: ENV["FIREBASE_APP_ID"],
+      apk_path: "android/app/build/outputs/apk/release/app-release.apk",
+      groups: "testers", # You can change this to your desired group
+      release_notes: "Automated build from GitHub Actions - #{ENV['GITHUB_SHA']}"
+    )
+  end
+
+  desc "Build debug APK"
+  lane :build_debug do
+    gradle(
+      task: "clean",
+      project_dir: "android"
+    )
+
+    gradle(
+      task: "assembleDebug",
+      project_dir: "android"
+    )
+  end
+
+  desc "Build release APK without distribution"
+  lane :build_release do
+    gradle(
+      task: "clean",
+      project_dir: "android"
+    )
+
+    gradle(
+      task: "assembleRelease",
+      project_dir: "android"
+    )
+  end
+end

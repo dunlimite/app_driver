@@ -1,0 +1,24 @@
+# The Appfile is a configuration file for fastlane. It's usually placed in the root of the project.
+# It contains metadata about your app that can be used by fastlane.
+# If you want to get a list of all available options run `fastlane docs`
+
+# The name of your app
+app_identifier ENV["APP_IDENTIFIER"] || "com.deliveryapp"
+
+# The name of your app
+app_name ENV["APP_NAME"] || "App Driver"
+
+# The bundle identifier of your app
+package_name ENV["PACKAGE_NAME"] || "com.deliveryapp"
+
+# The version of your app
+version_name ENV["VERSION_NAME"] || "1.0"
+
+# The version code of your app
+version_code ENV["VERSION_CODE"] || "1"
+
+# The minimum SDK version
+min_sdk_version ENV["MIN_SDK_VERSION"] || "21"
+
+# The target SDK version
+target_sdk_version ENV["TARGET_SDK_VERSION"] || "34"
