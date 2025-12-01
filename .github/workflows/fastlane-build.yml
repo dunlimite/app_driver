@@ -45,10 +45,7 @@ jobs:
     - name: Install dependencies
       run: |
         yarn install --frozen-lockfile
-
-    - name: Install Fastlane
-      run: |
-        gem install fastlane
+        bundle install
 
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
@@ -79,9 +76,9 @@ jobs:
         TARGET_SDK_VERSION: 34
       run: |
         if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-          fastlane android build_${{ github.event.inputs.build_type }}
+          bundle exec fastlane android build_${{ github.event.inputs.build_type }}
         else
-          fastlane android build_and_distribute
+          bundle exec fastlane android build_and_distribute
         fi
 
     - name: Upload APK as artifact
