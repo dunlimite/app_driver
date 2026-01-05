@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "935128066674",
+    "project_id": "vanvi-c3eb0",
+    "storage_bucket": "vanvi-c3eb0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935128066674:android:8cd9b609042c53376770eb",
+        "android_client_info": {
+          "package_name": "com.vanvidelivery.orders"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "935128066674-5omkoornff200i9bl1mjffb6mdb2pfdv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vanvidelivery.orders",
+            "certificate_hash": "3f4e9112210cb9f6ef48ead0efa39a2028782f9d"
+          }
+        },
+        {
+          "client_id": "935128066674-gt0p1b0pu15b7oo0d6gbknae0tohg7v1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vanvidelivery.orders",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "935128066674-tjns6ep8re03nnsuvafqjegur3l18j5k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPqdzFfjv5DR9DwXJqchHJ_InLZJ9xCCQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "935128066674-tjns6ep8re03nnsuvafqjegur3l18j5k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "935128066674-iiie2oc4imhvcp47qgac9qqiu87t03eq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.vanvidelivery.orders"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

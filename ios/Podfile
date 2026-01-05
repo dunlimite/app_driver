@@ -1,0 +1,100 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+platform :ios, '15.0'
+
+target 'ReactNativeAppsTemplate5' do
+  # Pods for google signin
+  pod 'GoogleSignIn', '~> 6.1.0'
+
+  # React Native Maps dependencies
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-LocationWhenInUse', :path => "#{permissions_path}/LocationWhenInUse"
+  pod 'Permission-Notifications', :path => "#{permissions_path}/Notifications"
+
+  rn_maps_path = '../node_modules/react-native-maps'
+  pod 'react-native-google-maps', :path => rn_maps_path
+  pod 'GoogleMaps', '3.5.0'
+  pod 'Google-Maps-iOS-Utils'
+
+  config = use_native_modules!
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+    # to enable hermes on iOS, change `false` to `true` and then install pods
+    :hermes_enabled => false
+  )
+
+  pod 'FBSDKCoreKit', :modular_headers => true
+  pod 'FBSDKLoginKit', :modular_headers => true
+  pod 'FBSDKShareKit', :modular_headers => true
+
+  # Enables Flipper.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work and
+  # you should disable the next line.
+  # use_flipper!()
+  post_install do |installer|
+    # This code solves frameworks IPA errors
+    bitcode_strip_path = `xcrun --find bitcode_strip`.chop!
+    def strip_bitcode_from_framework(bitcode_strip_path, framework_relative_path)
+      framework_path = File.join(Dir.pwd, framework_relative_path)
+      command = "#{bitcode_strip_path} #{framework_path} -r -o #{framework_path}"
+      puts "Stripping bitcode: #{command}"
+      system(command)
+    end
+
+    framework_paths = [
+      "Pods/FBAEMKit/XCFrameworks/FBAEMKit.xcframework/ios-arm64_armv7/FBAEMKit.framework/FBAEMKit",
+      "Pods/FBSDKShareKit/XCFrameworks/FBSDKShareKit.xcframework/ios-arm64_armv7/FBSDKShareKit.framework/FBSDKShareKit",
+      "Pods/FBSDKCoreKit/XCFrameworks/FBSDKCoreKit.xcframework/ios-arm64_armv7/FBSDKCoreKit.framework/FBSDKCoreKit",
+      "Pods/FBSDKCoreKit_Basics/XCFrameworks/FBSDKCoreKit_Basics.xcframework/ios-arm64_armv7/FBSDKCoreKit_Basics.framework/FBSDKCoreKit_Basics",
+      "Pods/FBSDKLoginKit/XCFrameworks/FBSDKLoginKit.xcframework/ios-arm64_armv7/FBSDKLoginKit.framework/FBSDKLoginKit",
+      "Pods/Intercom/Intercom.xcframework/ios-arm64/Intercom.framework/Intercom",
+      "Pods/OneSignalXCFramework/iOS_SDK/OneSignalSDK/OneSignal_Core/OneSignalCore.xcframework/ios-arm64_armv7_armv7s/OneSignalCore.framework/OneSignalCore",
+      "Pods/OneSignalXCFramework/iOS_SDK/OneSignalSDK/OneSignal_Extension/OneSignalExtension.xcframework/ios-arm64_armv7_armv7s/OneSignalExtension.framework/OneSignalExtension",
+      "Pods/OneSignalXCFramework/iOS_SDK/OneSignalSDK/OneSignal_Outcomes/OneSignalOutcomes.xcframework/ios-arm64_armv7_armv7s/OneSignalOutcomes.framework/OneSignalOutcomes",
+      "Pods/OneSignalXCFramework/iOS_SDK/OneSignalSDK/OneSignal_XCFramework/OneSignal.xcframework/ios-arm64_armv7_armv7s/OneSignal.framework/OneSignal",
+    ]
+
+    framework_paths.each do |framework_relative_path|
+      strip_bitcode_from_framework(bitcode_strip_path, framework_relative_path)
+    end
+
+    react_native_post_install(installer)
+
+    # # to build for the simulator on Apple M1
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
+        config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+      end
+    end
+    installer.pods_project.build_configurations.each do |config|
+      config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+      config.build_settings['WARNING_CFLAGS'] = '-Wno-nullability-completeness'
+    end
+    installer.pods_project.targets.each do |target|
+      if target.respond_to?(:product_type) and target.product_type == "com.apple.product-type.bundle"
+        target.build_configurations.each do |config|
+            config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
+        end
+      end
+    end
+    # Ruta del archivo a modificar
+    file_path = "../node_modules/react-native/ReactCommon/yoga/yoga/Yoga.cpp"
+
+    # Leer el archivo y almacenar su contenido en una variable
+    file = File.read(file_path)
+
+    # Reemplazar la línea
+    file.gsub!(/node->getLayout\(\)\.hadOverflow\(\) \|/, "node->getLayout().hadOverflow() ||")
+
+    # Escribir el archivo modificado
+    File.open(file_path, "w") { |f| f.write(file) }
+  end
+end
+
+target 'OneSignalNotificationServiceExtension' do
+  pod 'OneSignalXCFramework', '>= 3.0', '< 4.0'
+end

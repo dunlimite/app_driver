@@ -1,0 +1,22 @@
+{
+	"app_id": "react-native-app",
+	"notification_app": "orderingapp",
+	"app_name": "Ordering",
+	"apple_app_id": "com.ordering.app5",
+	"android_app_id": "com.reactnativeappstemplate5",
+	"merchantId": "com.ordering.v5app5",
+	"project": "vanvidelivery",
+	"api": {
+		"url": "https://apiv4.ordering.co",
+		"language": "en",
+		"version": "v400"
+	},
+	"socket": {
+		"url": "https://socket-v3.ordering.co"
+	},
+  "franchiseSlug": null,
+  "businessSlug": null,
+  "show_tutorials": true,
+  "useOptimizeLoad": false,
+  "app_scheme": "orderingapp"
+}
