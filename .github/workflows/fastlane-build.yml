@@ -34,7 +34,7 @@ jobs:
       uses: actions/setup-java@v4
       with:
         distribution: 'temurin'
-        java-version: '15'
+        java-version: '11'
 
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
