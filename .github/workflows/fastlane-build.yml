@@ -27,14 +27,14 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: '20.19.4'
         cache: 'yarn'
 
     - name: Setup Java
       uses: actions/setup-java@v4
       with:
         distribution: 'temurin'
-        java-version: '15'
+        java-version: '11'
 
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
