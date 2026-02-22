@@ -1,105 +1,105 @@
-name: Build and Distribute APK
+# name: Build and Distribute APK
 
-on:
-  push:
-    branches: [ main, develop ]
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch:
+# on:
+#   push:
+#     branches: [ main, develop ]
+#   pull_request:
+#     branches: [ main ]
+#   workflow_dispatch:
 
-jobs:
-  build-and-distribute:
-    runs-on: ubuntu-latest
+# jobs:
+#   build-and-distribute:
+#     runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        cache: 'yarn'
+#     - name: Setup Node.js
+#       uses: actions/setup-node@v4
+#       with:
+#         node-version: '18'
+#         cache: 'yarn'
 
-    - name: Setup Java
-      uses: actions/setup-java@v4
-      with:
-        distribution: 'temurin'
-        java-version: '17'
+#     - name: Setup Java
+#       uses: actions/setup-java@v4
+#       with:
+#         distribution: 'temurin'
+#         java-version: '17'
 
-    - name: Setup Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: '3.0'
-        bundler-cache: true
+#     - name: Setup Ruby
+#       uses: ruby/setup-ruby@v1
+#       with:
+#         ruby-version: '3.0'
+#         bundler-cache: true
 
-    - name: Install dependencies
-      run: |
-        yarn install --frozen-lockfile
+#     - name: Install dependencies
+#       run: |
+#         yarn install --frozen-lockfile
 
-    - name: Install Fastlane
-      run: |
-        gem install fastlane
+#     - name: Install Fastlane
+#       run: |
+#         gem install fastlane
 
-    - name: Setup Android SDK
-      uses: android-actions/setup-android@v3
+#     - name: Setup Android SDK
+#       uses: android-actions/setup-android@v3
 
-    - name: Cache Gradle packages
-      uses: actions/cache@v3
-      with:
-        path: |
-          ~/.gradle/caches
-          ~/.gradle/wrapper
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-        restore-keys: |
-          ${{ runner.os }}-gradle-
+#     - name: Cache Gradle packages
+#       uses: actions/cache@v3
+#       with:
+#         path: |
+#           ~/.gradle/caches
+#           ~/.gradle/wrapper
+#         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+#         restore-keys: |
+#           ${{ runner.os }}-gradle-
 
-    - name: Make gradlew executable
-      run: chmod +x android/gradlew
+#     - name: Make gradlew executable
+#       run: chmod +x android/gradlew
 
-    - name: Build APK
-      run: |
-        cd android
-        ./gradlew assembleRelease
+#     - name: Build APK
+#       run: |
+#         cd android
+#         ./gradlew assembleRelease
 
-    - name: Upload APK to Firebase App Distribution
-      uses: wzieba/Firebase-Distribution-Github-Action@v1
-      with:
-        appId: ${{ secrets.FIREBASE_APP_ID }}
-        token: ${{ secrets.FIREBASE_TOKEN }}
-        groups: testers
-        file: android/app/build/outputs/apk/release/app-release.apk
-        releaseNotes: |
-          Automated build from GitHub Actions
-          Commit: ${{ github.sha }}
-          Branch: ${{ github.ref_name }}
-          Author: ${{ github.actor }}
+#     - name: Upload APK to Firebase App Distribution
+#       uses: wzieba/Firebase-Distribution-Github-Action@v1
+#       with:
+#         appId: ${{ secrets.FIREBASE_APP_ID }}
+#         token: ${{ secrets.FIREBASE_TOKEN }}
+#         groups: testers
+#         file: android/app/build/outputs/apk/release/app-release.apk
+#         releaseNotes: |
+#           Automated build from GitHub Actions
+#           Commit: ${{ github.sha }}
+#           Branch: ${{ github.ref_name }}
+#           Author: ${{ github.actor }}
 
-    - name: Upload APK as artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: app-release-apk
-        path: android/app/build/outputs/apk/release/app-release.apk
-        retention-days: 30
+#     - name: Upload APK as artifact
+#       uses: actions/upload-artifact@v4
+#       with:
+#         name: app-release-apk
+#         path: android/app/build/outputs/apk/release/app-release.apk
+#         retention-days: 30
 
-    - name: Send email notification
-      if: always()
-      uses: dawidd6/action-send-mail@v3
-      with:
-        server_address: smtp.gmail.com
-        server_port: 587
-        username: ${{ secrets.EMAIL_USERNAME }}
-        password: ${{ secrets.EMAIL_PASSWORD }}
-        subject: "Build Status: ${{ job.status }} - ${{ github.repository }}"
-        to: ${{ secrets.NOTIFICATION_EMAIL }}
-        from: ${{ secrets.EMAIL_USERNAME }}
-        body: |
-          Build Status: ${{ job.status }}
-          Repository: ${{ github.repository }}
-          Branch: ${{ github.ref_name }}
-          Commit: ${{ github.sha }}
-          Author: ${{ github.actor }}
+#     - name: Send email notification
+#       if: always()
+#       uses: dawidd6/action-send-mail@v3
+#       with:
+#         server_address: smtp.gmail.com
+#         server_port: 587
+#         username: ${{ secrets.EMAIL_USERNAME }}
+#         password: ${{ secrets.EMAIL_PASSWORD }}
+#         subject: "Build Status: ${{ job.status }} - ${{ github.repository }}"
+#         to: ${{ secrets.NOTIFICATION_EMAIL }}
+#         from: ${{ secrets.EMAIL_USERNAME }}
+#         body: |
+#           Build Status: ${{ job.status }}
+#           Repository: ${{ github.repository }}
+#           Branch: ${{ github.ref_name }}
+#           Commit: ${{ github.sha }}
+#           Author: ${{ github.actor }}
 
-          ${{ job.status == 'success' && '✅ Build completed successfully! APK has been uploaded to Firebase App Distribution.' || '❌ Build failed. Please check the logs for details.' }}
+#           ${{ job.status == 'success' && '✅ Build completed successfully! APK has been uploaded to Firebase App Distribution.' || '❌ Build failed. Please check the logs for details.' }}
 
-          View the workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+#           View the workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
