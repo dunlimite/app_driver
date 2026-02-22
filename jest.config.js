@@ -2,15 +2,10 @@ module.exports = {
   preset: 'react-native',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
 
-  // Runs BEFORE the test framework — use for polyfills and global mocks
+  // Runs BEFORE the test framework — global mocks and polyfills
   setupFiles: ['<rootDir>/jest/setup.js'],
 
-  // Runs AFTER jest is set up — for library-level setup (e.g. gesture handler)
-  setupFilesAfterFramework: [
-    '@react-native/jest/setup',
-  ],
-
-  // Tell Jest to transform these RN packages (they ship as ES modules)
+  // Transform these node_modules packages that ship as ES Modules
   transformIgnorePatterns: [
     'node_modules/(?!(' +
     'react-native' +
@@ -23,8 +18,8 @@ module.exports = {
     '|react-native-screens' +
     '|react-native-vector-icons' +
     '|react-native-linear-gradient' +
+    '|react-native-sound-player' +
     '|@gorhom' +
     ')/)',
   ],
 }
-

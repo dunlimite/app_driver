@@ -54,6 +54,17 @@ jest.mock('react-native-vector-icons/MaterialIcons', () => 'Icon');
 jest.mock('react-native-vector-icons/FontAwesome', () => 'Icon');
 jest.mock('react-native-vector-icons/Ionicons', () => 'Icon');
 
+// ─── Sound Player ─────────────────────────────────────────────────────────────
+jest.mock('react-native-sound-player', () => ({
+  playUrl: jest.fn(),
+  playSoundFile: jest.fn(),
+  stop: jest.fn(),
+  pause: jest.fn(),
+  resume: jest.fn(),
+  seek: jest.fn(),
+  addEventListener: jest.fn(),
+}));
+
 // ─── NetInfo ──────────────────────────────────────────────────────────────────
 jest.mock('@react-native-community/netinfo', () => ({
   addEventListener: jest.fn(),
