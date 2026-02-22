@@ -77,3 +77,38 @@ jest.mock('react-native-safe-area-context', () => ({
   SafeAreaView: ({ children }) => children,
   useSafeAreaInsets: () => ({ top: 0, right: 0, bottom: 0, left: 0 }),
 }));
+
+// ─── iPhone X Helper ──────────────────────────────────────────────────────────
+jest.mock('react-native-iphone-x-helper', () => ({
+  isIphoneX: jest.fn(() => false),
+  ifIphoneX: jest.fn((iphoneXStyle, regularStyle) => regularStyle),
+  getStatusBarHeight: jest.fn(() => 0),
+  getBottomSpace: jest.fn(() => 0),
+}));
+
+// ─── Maps ─────────────────────────────────────────────────────────────────────
+jest.mock('react-native-maps', () => {
+  const React = require('react');
+  const MapView = (props) => React.createElement('MapView', props);
+  MapView.Marker = (props) => React.createElement('Marker', props);
+  MapView.Polyline = (props) => React.createElement('Polyline', props);
+  return { __esModule: true, default: MapView, ...MapView };
+});
+
+// ─── Background Timer ─────────────────────────────────────────────────────────
+jest.mock('react-native-background-timer', () => ({
+  runBackgroundTimer: jest.fn(),
+  stopBackgroundTimer: jest.fn(),
+  setTimeout: jest.fn(),
+  clearTimeout: jest.fn(),
+  setInterval: jest.fn(),
+  clearInterval: jest.fn(),
+}));
+
+// ─── OneSignal ────────────────────────────────────────────────────────────────
+jest.mock('react-native-onesignal', () => ({
+  setAppId: jest.fn(),
+  promptForPushNotificationsWithUserResponse: jest.fn(),
+  setNotificationOpenedHandler: jest.fn(),
+  setNotificationWillShowInForegroundHandler: jest.fn(),
+}));
