@@ -5,8 +5,14 @@ module.exports = {
   // Runs BEFORE the test framework — global mocks and polyfills
   setupFiles: ['<rootDir>/jest/setup.js'],
 
+  // Resolve path aliases — must match babel.config.js and tsconfig.json aliases
+  moduleNameMapper: {
+    '^@ui$': '<rootDir>/src/ui/index.tsx',
+    '^@components$': '<rootDir>/src/@/components/native/index.js',
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
+
   // Transform ALL react-native ecosystem packages that ship as ES Modules.
-  // Using a single broad pattern to avoid adding packages one-by-one.
   transformIgnorePatterns: [
     'node_modules/(?!(' +
     'react-native' +
