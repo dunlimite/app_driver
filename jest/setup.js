@@ -11,6 +11,174 @@
 require('react-native-gesture-handler/jestSetup');
 
 // ─────────────────────────────────────────────────────────────────────────────
+// @UI — Mock the entire barrel to break circular dependency
+// src/ui/index.tsx → Delivery.tsx → OrderContentComponent.tsx → @ui (circular)
+// ─────────────────────────────────────────────────────────────────────────────
+jest.mock('@ui', () => {
+  const React = require('react');
+  const { View, Text, TouchableOpacity } = require('react-native');
+  const noop = () => { };
+  const MockComp = ({ children }) => React.createElement(View, null, children);
+  const MockHook = jest.fn(() => [{}]);
+
+  return {
+    // ── Components ───────────────────────────────────────────────────────────
+    AcceptOrRejectOrder: MockComp,
+    BusinessController: MockComp,
+    BusinessProductList: MockComp,
+    Chat: MockComp,
+    DriverMap: MockComp,
+    FloatingButton: MockComp,
+    ForgotPasswordForm: MockComp,
+    GoogleMap: MockComp,
+    Home: MockComp,
+    LanguageSelector: MockComp,
+    LoginForm: MockComp,
+    LogoutButton: MockComp,
+    MessagesOption: MockComp,
+    MapView: MockComp,
+    NewOrderNotification: MockComp,
+    NetworkError: MockComp,
+    NotFoundSource: MockComp,
+    OrderDetailsDelivery: MockComp,
+    OrderMessage: MockComp,
+    OrdersOption: MockComp,
+    OrdersOptionMap: MockComp,
+    OrdersListManager: MockComp,
+    OrdersOptionStatus: MockComp,
+    OrdersOptionBusiness: MockComp,
+    OrdersOptionCity: MockComp,
+    OrdersOptionDate: MockComp,
+    OrdersOptionDelivery: MockComp,
+    OrdersOptionDriver: MockComp,
+    OrdersOptionPaymethod: MockComp,
+    OrderSummary: MockComp,
+    PhoneInputNumber: MockComp,
+    PreviousMessages: MockComp,
+    PreviousOrders: MockComp,
+    ProductItemAccordion: MockComp,
+    ReviewCustomer: MockComp,
+    SafeAreaContainerLayout: MockComp,
+    SearchBar: MockComp,
+    Sessions: MockComp,
+    SignupForm: MockComp,
+    StoresList: MockComp,
+    UserFormDetailsUI: MockComp,
+    UserProfileForm: MockComp,
+    VerifyPhone: MockComp,
+    DriverSchedule: MockComp,
+    ScheduleBlocked: MockComp,
+    OrderDetailsLogistic: MockComp,
+    NotificationSetting: MockComp,
+    WebsocketStatus: MockComp,
+    DriverEarnings: MockComp,
+    Loader: MockComp,
+    WithDraMethod: MockComp,
+    Payout: MockComp,
+    DriverMessage: MockComp,
+    LoginCheckDriverDelivery: MockComp,
+    SignUpDriver: MockComp,
+    PhoneNumberVerify: MockComp,
+    SignupDetails: MockComp,
+    CustomerDiscloser: MockComp,
+    CustomerUserDetails: MockComp,
+    CustomerLisence: MockComp,
+    CustomerVehicleList: MockComp,
+    CustomerInsurance: MockComp,
+    CustomerBackgroundCheck: MockComp,
+    CustomerprofileConfirm: MockComp,
+    CheckProgreess: MockComp,
+    // ── OComponents ──────────────────────────────────────────────────────────
+    OText: ({ children }) => React.createElement(Text, null, children),
+    OButton: ({ onPress, text }) => React.createElement(TouchableOpacity, { onPress }, React.createElement(Text, null, text)),
+    OInput: MockComp,
+    OIcon: MockComp,
+    OFab: MockComp,
+    OIconButton: MockComp,
+    OTextarea: MockComp,
+    OAlert: MockComp,
+    OAlertOriginal: MockComp,
+    OModal: MockComp,
+    OToast: MockComp,
+    OLink: MockComp,
+    ODropDown: MockComp,
+    ODropDownCalendar: MockComp,
+    // ── Layouts ───────────────────────────────────────────────────────────────
+    Container: MockComp,
+    SafeAreaContainer: MockComp,
+    // ── Hooks ─────────────────────────────────────────────────────────────────
+    useLocation: jest.fn(() => [{ location: null }, noop]),
+    useCountdownTimer: jest.fn(() => [{ timer: 0 }, noop]),
+    useDeviceOrientation: jest.fn(() => [{ orientation: 'portrait', dimensions: { width: 390, height: 844 } }]),
+    PORTRAIT: 'portrait',
+    LANDSCAPE: 'landscape',
+    DeviceOrientationMethods: {
+      PORTRAIT: 'portrait',
+      LANDSCAPE: 'landscape',
+      useDeviceOrientation: jest.fn(() => [{ orientation: 'portrait', dimensions: { width: 390, height: 844 } }]),
+    },
+    // ── Context ───────────────────────────────────────────────────────────────
+    ThemeProvider: MockComp,
+    useTheme: jest.fn(() => ({ colors: {}, fonts: {} })),
+    OfflineActionsContext: {},
+    OfflineActionsProvider: MockComp,
+    useOfflineActions: jest.fn(() => [{}]),
+    // ── Providers ─────────────────────────────────────────────────────────────
+    StoreMethods: MockComp,
+  };
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// @COMPONENTS — Mock the entire barrel (ordering-components library)
+// ─────────────────────────────────────────────────────────────────────────────
+jest.mock('@components', () => {
+  const React = require('react');
+  const { View } = require('react-native');
+  const MockComp = ({ children }) => React.createElement(View, null, children);
+  const MockHook = jest.fn(() => [{}]);
+  const MockContextHook = jest.fn(() => [{ configs: {}, user: {}, token: null }, jest.fn()]);
+
+  return {
+    // ── Contexts / Hooks ──────────────────────────────────────────────────────
+    useApi: jest.fn(() => [{ project: 'test' }, jest.fn()]),
+    useLanguage: jest.fn(() => [{ language: 'en' }, jest.fn((key, fallback) => fallback || key)]),
+    useConfig: jest.fn(() => [{ configs: {} }, jest.fn()]),
+    useSession: jest.fn(() => [{ user: null, token: null, loading: false }, jest.fn()]),
+    useOrder: jest.fn(() => [{ loading: false, options: {} }, jest.fn()]),
+    useUtils: jest.fn(() => [{ parsePrice: jest.fn(v => `$${v}`), parseNumber: jest.fn(v => v) }, jest.fn()]),
+    useEvent: jest.fn(() => [{ emit: jest.fn(), on: jest.fn(), off: jest.fn() }, jest.fn()]),
+    useBusiness: jest.fn(() => [{ business: null }, jest.fn()]),
+    useCustomer: jest.fn(() => [{ customer: null }, jest.fn()]),
+    useToast: jest.fn(() => [{ toasts: [] }, jest.fn()]),
+    useWebsocket: jest.fn(() => [{ socket: null }, jest.fn()]),
+    useOrderingTheme: jest.fn(() => [{ theme: {} }, jest.fn()]),
+    useValidationFields: jest.fn(() => [{ fields: {} }, jest.fn()]),
+    // ── Providers ─────────────────────────────────────────────────────────────
+    ApiProvider: MockComp,
+    SessionProvider: MockComp,
+    OrderProvider: MockComp,
+    ConfigProvider: MockComp,
+    LanguageProvider: MockComp,
+    BusinessProvider: MockComp,
+    EventProvider: MockComp,
+    ToastProvider: MockComp,
+    OrderingProvider: MockComp,
+    WebsocketProvider: MockComp,
+    ValidationFieldsProvider: MockComp,
+    OrderingThemeProvider: MockComp,
+    // ── Components ────────────────────────────────────────────────────────────
+    OrderDetails: MockComp,
+    LoginForm: MockComp,
+    SignupForm: MockComp,
+    UserFormDetails: MockComp,
+    // ── Constants ─────────────────────────────────────────────────────────────
+    CODES: {},
+  };
+});
+
+
+
+// ─────────────────────────────────────────────────────────────────────────────
 // REANIMATED
 // ─────────────────────────────────────────────────────────────────────────────
 jest.mock('react-native-reanimated', () => {
