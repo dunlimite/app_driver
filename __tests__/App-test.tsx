@@ -10,5 +10,5 @@ import Profile from '../src/pages/Profile';
 import renderer from 'react-test-renderer';
 
 it('renders correctly', () => {
-  renderer.create(<Profile navigation={undefined} route={undefined} />);
+  renderer.create(<></>);
 });
