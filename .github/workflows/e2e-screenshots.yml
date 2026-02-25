@@ -3,9 +3,9 @@ name: E2E Login Screenshots
 
 on:
   push:
-    branches: [ develop, main ]
+    branches: [ develope, main ]
   pull_request:
-    branches: [ develop, main ]
+    branches: [ develope, main ]
   workflow_dispatch:   # allow manual trigger from GitHub UI
 
 jobs:
