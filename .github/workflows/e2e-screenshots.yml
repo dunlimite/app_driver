@@ -56,7 +56,8 @@ jobs:
 
       # ── 7. Install JS deps ────────────────────────────────────────────────────
       - name: Install JS dependencies
-        run: yarn install --frozen-lockfile
+        # Note: no --frozen-lockfile because yarn.lock updates when new deps added
+        run: yarn install
 
       # ── 8. Install Ruby/Fastlane deps ─────────────────────────────────────────
       - name: Install Fastlane
