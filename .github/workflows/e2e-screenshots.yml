@@ -72,17 +72,18 @@ jobs:
         run: mkdir -p e2e/screenshots
 
       # ── 11. Start Android Emulator + Run E2E ──────────────────────────────────
-      # Uses Android emulator runner — handles AVD creation, boot wait, teardown
+      # API 29 + default target = most stable combination on GitHub Actions runners
+      # API 30 google_apis frequently causes Broken pipe / adb exit 224 crashes
       - name: Run E2E Screenshot Tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 30
-          target: google_apis
+          api-level: 29
+          target: default
           arch: x86_64
           profile: pixel_4
-          avd-name: Pixel_4_API_30
-          force-avd-creation: false
-          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
+          avd-name: Pixel_4_API_29
+          force-avd-creation: true
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -memory 2048 -cores 2
           disable-animations: true
           script: bundle exec fastlane android e2e_screenshots
 
