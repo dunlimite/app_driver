@@ -9,7 +9,9 @@
     "start:reset": "react-native start --reset-cache",
     "test": "jest",
     "lint": "eslint . --fix",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "e2e:build": "detox build --configuration android.emu.debug",
+    "e2e:test": "detox test --configuration android.emu.debug --headless --record-logs all --take-screenshots all --artifacts-location e2e/screenshots/"
   },
   "dependencies": {
     "@fatnlazycat/react-native-recaptcha-v3": "^1.0.3",
@@ -123,7 +125,9 @@
     "jest": "^29.6.3",
     "prettier": "2.8.8",
     "react-test-renderer": "18.2.0",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "detox": "^20.18.0",
+    "@types/detox": "^18.1.0"
   },
   "engines": {
     "node": ">=18"

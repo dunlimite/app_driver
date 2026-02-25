@@ -64,4 +64,51 @@ platform :android do
       project_dir: "android"
     )
   end
+
+  desc "Run Detox E2E tests and capture Login screen screenshots"
+  lane :e2e_screenshots do
+    screenshots_dir = File.join(Dir.pwd, "e2e", "screenshots")
+
+    UI.message "🧹 Cleaning old screenshots..."
+    FileUtils.rm_rf(screenshots_dir)
+    FileUtils.mkdir_p(screenshots_dir)
+
+    UI.message "🔨 Building debug APK for Detox..."
+    gradle(
+      task: "assembleDebug",
+      project_dir: "android"
+    )
+
+    UI.message "🔨 Building Android test APK..."
+    gradle(
+      task: "assembleAndroidTest",
+      project_dir: "android",
+      properties: {
+        "testBuildType" => "debug"
+      }
+    )
+
+    UI.message "📱 Running Detox E2E tests..."
+    begin
+      sh(
+        "yarn detox test " \
+        "--configuration android.emu.debug " \
+        "--headless " \
+        "--record-logs all " \
+        "--take-screenshots all " \
+        "--artifacts-location e2e/screenshots/ " \
+        "--loglevel verbose"
+      )
+      UI.success "✅ E2E tests passed! Screenshots saved to e2e/screenshots/"
+    rescue => e
+      UI.error "❌ E2E tests failed: #{e.message}"
+      UI.important "📸 Partial screenshots may still exist in e2e/screenshots/"
+      # Don't raise — let CI still upload whatever screenshots were captured
+    end
+
+    screenshot_count = Dir.glob("#{screenshots_dir}/**/*.png").count
+    UI.message "📸 Total screenshots captured: #{screenshot_count}"
+  end
+
 end
+

@@ -1,0 +1,127 @@
+---
+name: E2E Login Screenshots
+
+on:
+  push:
+    branches: [ develop, main ]
+  pull_request:
+    branches: [ develop, main ]
+  workflow_dispatch:   # allow manual trigger from GitHub UI
+
+jobs:
+  e2e-screenshots:
+    name: Capture Login Screen Screenshots
+    runs-on: ubuntu-latest
+    timeout-minutes: 60   # emulator boot + tests can be slow
+
+    steps:
+      # ── 1. Checkout ──────────────────────────────────────────────────────────
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # ── 2. Node.js ───────────────────────────────────────────────────────────
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'yarn'
+
+      # ── 3. Java (for Gradle / Android build) ─────────────────────────────────
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      # ── 4. Ruby + Fastlane ────────────────────────────────────────────────────
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+          bundler-cache: false
+
+      # ── 5. Android SDK ────────────────────────────────────────────────────────
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      # ── 6. Gradle cache ───────────────────────────────────────────────────────
+      - name: Cache Gradle
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: ${{ runner.os }}-gradle-
+
+      # ── 7. Install JS deps ────────────────────────────────────────────────────
+      - name: Install JS dependencies
+        run: yarn install --frozen-lockfile
+
+      # ── 8. Install Ruby/Fastlane deps ─────────────────────────────────────────
+      - name: Install Fastlane
+        run: bundle install
+
+      # ── 9. Make gradlew executable ────────────────────────────────────────────
+      - name: Make gradlew executable
+        run: chmod +x android/gradlew
+
+      # ── 10. Create screenshots directory ──────────────────────────────────────
+      - name: Prepare screenshots folder
+        run: mkdir -p e2e/screenshots
+
+      # ── 11. Start Android Emulator + Run E2E ──────────────────────────────────
+      # Uses Android emulator runner — handles AVD creation, boot wait, teardown
+      - name: Run E2E Screenshot Tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          target: google_apis
+          arch: x86_64
+          profile: pixel_4
+          avd-name: Pixel_4_API_30
+          force-avd-creation: false
+          emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
+          disable-animations: true
+          script: bundle exec fastlane android e2e_screenshots
+
+      # ── 12. Upload screenshots as GitHub Artifact ──────────────────────────────
+      - name: Upload Login Screenshots
+        if: always()   # upload even if tests failed (partial screenshots are useful)
+        uses: actions/upload-artifact@v4
+        with:
+          name: login-screenshots-${{ github.run_number }}
+          path: e2e/screenshots/
+          retention-days: 14
+          if-no-files-found: warn
+
+      # ── 13. Upload Detox logs on failure ──────────────────────────────────────
+      - name: Upload Detox logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: detox-logs-${{ github.run_number }}
+          path: |
+            e2e/screenshots/**/*.log
+            /tmp/detox_*
+          retention-days: 7
+          if-no-files-found: ignore
+
+      # ── 14. Summary ───────────────────────────────────────────────────────────
+      - name: Screenshot summary
+        if: always()
+        run: |
+          echo "## 📸 Login Screenshot Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -d "e2e/screenshots" ]; then
+            COUNT=$(find e2e/screenshots -name "*.png" | wc -l)
+            echo "**Total screenshots captured:** $COUNT" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "| Screenshot |" >> $GITHUB_STEP_SUMMARY
+            echo "|---|" >> $GITHUB_STEP_SUMMARY
+            find e2e/screenshots -name "*.png" | while read f; do
+              echo "| $(basename $f) |" >> $GITHUB_STEP_SUMMARY
+            done
+          else
+            echo "❌ No screenshots directory found." >> $GITHUB_STEP_SUMMARY
+          fi

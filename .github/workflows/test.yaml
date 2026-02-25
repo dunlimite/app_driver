@@ -1,0 +1,23 @@
+# ---
+
+# name: 'Test yaml'
+# on:
+#   push:
+#     branches: ['develop']
+
+#   workflow_dispatch:
+#     inputs:
+#       build_type:
+#         description: 'Build Type'
+#         required: true
+#         default: 'release'
+#         type: choice
+#         options:
+#           - debug
+#           - release
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: checkout code
+#         uses: actions/checkout@v4
