@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'yarn'
+          # cache: 'yarn'
 
       # ── 3. Java (for Gradle / Android build) ─────────────────────────────────
       - name: Setup Java
